@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>絵が、戦略になる。｜AIビジュアル活用LP制作サービス</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* 制作記録に基づいた「和×魔法使いのアトリエ」カスタムカラー */
+        :root {
+            --color-kinari: #faf8f5;       /* 生成り紙色（オフホワイト・和紙） */
+            --color-ai: #1a2436;           /* 墨絵の藍（深インディゴ） */
+            --color-shyu: #dc4434;         /* 朱色 */
+            --color-kin: #d4af37;          /* 金色 */
+        }
+
+        body {
+            background-color: var(--color-kinari);
+            color: var(--color-ai);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+        }
+
+        /* 文字の間（ま）を演出するタイポグラフィ */
+        .catchphrase {
+            letter-spacing: 0.35em;
+            font-weight: 900;
+            color: var(--color-kinari);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+
+        /* セクション背景カスタム */
+        .bg-ai {
+            background-color: var(--color-ai) !important;
+        }
+        .text-shyu {
+            color: var(--color-shyu) !important;
+        }
+        .text-kin {
+            color: var(--color-kin) !important;
+        }
+        .border-shyu {
+            border-color: var(--color-shyu) !important;
+        }
+
+        /* ボタンカスタム */
+        .btn-shyu {
+            background-color: var(--color-shyu);
+            color: #ffffff;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-shyu:hover {
+            background-color: #be3527;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* カードの質感調整 */
+        .custom-card {
+            background: #ffffff;
+            border: 1px solid rgba(26, 36, 54, 0.08);
+            border-radius: 8px;
+        }
+
+        /* 画像プレースホルダーのスタイル */
+        .img-placeholder {
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+            color: #6c757d;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 2px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="position-relative d-flex align-items-center py-5 text-white bg-ai" style="min-height: 85vh; background: linear-gradient(rgba(26, 36, 54, 0.75), rgba(26, 36, 54, 0.85)), url('hero-bg.jpg') no-repeat center center / cover;">
+        <div class="container text-center py-5">
+            <p class="fs-4 fw-bold text-kin mb-3">言葉を尽くすより、一枚の視覚で心を掴む。</p>
+            <h1 class="display-2 my-4 catchphrase">絵が、戦略になる。</h1>
+            <div class="col-lg-8 mx-auto">
+                <p class="lead mb-5 text-white-50">
+                    商品へのこだわり、職人の息づかい、工房の世界観。<br class="d-none d-md-inline">
+                    説明文を読ませる前に「一瞬で伝わる」AIビジュアルを活用した、<br class="d-none d-md-inline">
+                    中小企業・製造業・店舗のための新しいランディングページ制作。
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="#contact" class="btn btn-shyu btn-lg px-5 py-3 fw-bold shadow">
+                        <i class="bi bi-chat-right-text-fill me-2"></i>世界観のあるLPについて相談する
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="text-shyu fw-bold tracking-wider">USER'S TROUBLE</span>
+                <h2 class="fw-bold mt-2 fs-1">こんなお悩みはありませんか？</h2>
+                <p class="text-muted">「良いもの」を作っているのに、ネットでその価値が伝わらない……</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="custom-card h-100 p-4 text-center shadow-sm">
+                        <div class="text-shyu mb-3"><i class="bi bi-exclamation-circle-fill fs-1"></i></div>
+                        <h3 class="fs-5 fw-bold mb-3">言葉だけの説明に限界がある</h3>
+                        <p class="text-muted small mb-0">商品の技術やこだわりを文章で書き連ねても、なかなか最後まで読んでもらえない。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card h-100 p-4 text-center shadow-sm">
+                        <div class="text-shyu mb-3"><i class="bi bi-grid-1x2-fill fs-1"></i></div>
+                        <h3 class="fs-5 fw-bold mb-3">ありきたりなデザインが嫌だ</h3>
+                        <p class="text-muted small mb-0">よくある「売るためだけ」の派手なLPではなく、自社のブランドや工房の「空気感」を大切にしたい。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card h-100 p-4 text-center shadow-sm">
+                        <div class="text-shyu mb-3"><i class="bi bi-currency-yen fs-1"></i></div>
+                        <h3 class="fs-5 fw-bold mb-3">大がかりな制作はコストが…</h3>
+                        <p class="text-muted small mb-0">新商品ひとつ、または特定のサービスだけを、まずは小さく、でも印象的に紹介したい。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-3">
+                <p class="fs-4 fw-bold">
+                    その答えは、単なる飾りではない。<br>
+                    ビジネスを前に進めるための <span class="text-shyu border-bottom border-2 border-shyu">「絵（戦略ビジュアル）」</span> にあります。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white border-top border-bottom">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="text-shyu fw-bold">STORY</span>
+                <h2 class="fw-bold mt-2 fs-1">「絵が、戦略になる」という言葉に惹かれて</h2>
+                <p class="text-muted">AI画像生成で「画像だけでLP」を試した制作記録</p>
+            </div>
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-9">
+                    <div class="p-4 rounded-3 style-quote" style="background-color: var(--color-kinari); border-left: 6px solid var(--color-shyu);">
+                        <p class="mb-3">
+                            この言葉は、ZEROLIS主催者の長嶺圭一郎さんが開いた勉強会<strong>「絵が、戦略になる－ChatGPT Images 2.0で組み立てるマーケクリエイティブ」</strong>で紹介されていたものです。
+                        </p>
+                        <p class="mb-3">
+                            勉強会では、ChatGPT Images 2.0を使い「画像だけでLPを組み立てる」という実演があり、私はその中で使われていた言葉に強く惹かれました。
+                        </p>
+                        <p class="fw-bold text-ai mb-0">
+                            特に気に入ったのは、「絵が」のあとに、読点「、」が入っているところです。<br>
+                            「絵が戦略になる」ではなく、<span class="text-shyu fs-5">「絵が、戦略になる」</span>。<br>
+                            この少しの間（ま）があることで、絵がただの飾りではなく、ビジネスを前に進める力になるのだと、あらためて感じさせてくれました。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5 g-5 pt-4">
+                <div class="col-md-6">
+                    <div class="img-placeholder">[ 『絵が、戦略になる』という言葉だけで作成した最初のLP画像 ]</div>
+                </div>
+                <div class="col-md-6">
+                    <span class="badge bg-secondary mb-2 px-3 py-2">Step 1</span>
+                    <h3 class="fw-bold mb-3">ただ、「絵が、戦略になる」とだけでLPを作成</h3>
+                    <p class="text-muted">
+                        まずはこの言葉だけをもとに、ChatGPT Images 2.0に作成してもらいました。
+                        できあがったLPは、明るく、親しみやすく、十分に魅力的なものでした。
+                    </p>
+                    <p class="text-muted">
+                        ただ、勉強会で見たような独特の世界観、いわば「長嶺ワールド」とは少し違います。そこで長嶺さんに、どのように依頼すればあの雰囲気に近づけるのかを伺ってみました。
+                    </p>
+                </div>
+            </div>
+
+            <div class="row align-items-center flex-md-row-reverse g-5 pt-4">
+                <div class="col-md-6">
+                    <div class="img-placeholder" style="border-color: var(--color-shyu); background-color: #f4eeeb;">[ 配色とスタイルを追加して完成した長嶺ワールドのLP画像 ]</div>
+                </div>
+                <div class="col-md-6">
+                    <span class="badge bg-shyu mb-2 px-3 py-2">Step 2</span>
+                    <h3 class="fw-bold mb-3">色味とスタイルを指定して、「長嶺ワールド」が完成</h3>
+                    <p class="text-muted">
+                        長嶺さんから教えていただいたのは、配色とスタイルを具体的に指定することでした。<br>
+                        <strong>【追加した条件】</strong><br>
+                        ・配色4色のみ：墨絵の藍（深インディゴ）／朱色／生成り紙色（オフホワイト・和紙）／金色（ごく要所のみ）<br>
+                        ・スタイル：墨絵×和×魔法使いのアトリエ
+                    </p>
+                    <p class="fw-bold text-ai">
+                        条件を追加してもう一度作成すると……できました、長嶺ワールド！<br>
+                        ただきれいなだけではない、世界観のあるLPが生まれました。同じ言葉から始めても、配色やスタイルを加えるだけで、見る人に与える印象は劇的に変わります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light border-bottom">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-shyu fw-bold">HOW IT WORKS</span>
+                <h2 class="fw-bold mt-2">常識を覆す「画像7〜8枚」で構成するLP</h2>
+                <p class="text-muted">世界観を崩さず、最速でカタチにする実験的HTMLコーディング</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card border-0 shadow-sm p-4 p-md-5 bg-white">
+                        <p class="fs-5 text-ai mb-4">
+                            その後、この完成した独自の世界観を持つLPを<span class="fw-bold text-shyu">7枚（〜8枚）の画像に分割</span>し、さらに<span class="fw-bold text-shyu">Bootstrap 5.3</span>でHTMLとして組み上げるところまで試してみました。
+                        </p>
+                        
+                        <div class="row g-4 my-2">
+                            <div class="col-md-6">
+                                <div class="p-3 rounded" style="background-color: var(--color-kinari);">
+                                    <h4 class="fs-6 fw-bold text-ai mb-2"><i class="bi bi-shield-check text-success me-2"></i>画像主体の大きなメリット</h4>
+                                    <p class="small text-muted mb-0">
+                                        画像だけでLPを組むと、フォント崩れやレイアウトの乱れを気にせず、<strong>世界観の統一感を極限まで保ちやすくなります。</strong>また、1枚ずつのセクションとして扱えるため、ページ全体の流れも非常に確認しやすくなるのが特徴です。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 rounded" style="background-color: var(--color-kinari);">
+                                    <h4 class="fs-6 fw-bold text-ai mb-2"><i class="bi bi-cone-striped text-warning me-2"></i>プロとしての品質の担保</h4>
+                                    <p class="small text-muted mb-0">
+                                        もちろん、画像だけで構成する場合には、表示速度や検索エンジンへの対応、<strong>alt属性や周辺テキストの入れ方</strong>など、Webページとして考えるべき技術的なハードルもあります。当サービスではそこをしっかりと最適化して構築します。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="fs-5 fw-bold text-center text-ai mt-4 mb-0">
+                            「AI画像生成×画像分割コーディング」を活用したLP制作には、<br class="d-none d-md-inline">
+                            あなたのビジネスの魅力を一瞬で伝える、大きな可能性があると感じています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-ai text-white">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white fs-1">当方のLP制作が選ばれる理由</h2>
+                <p class="text-kin fw-bold">Bootstrap 5.3による美しいHTML実装と、AIビジュアルの融合</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 bg-white bg-opacity-10 rounded h-100 border border-secondary border-opacity-20">
+                        <h3 class="fs-5 fw-bold text-kin mb-3"><i class="bi bi-palette-fill me-2"></i>① 圧倒的な世界観の統一</h3>
+                        <p class="small text-white-50 mb-0">AI画像生成の強みを活かし、あなたのブランドだけの独特な空気感をページ全体で表現。競合他社との差別化をビジュアルで一瞬にして成立させます。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white bg-opacity-10 rounded h-100 border border-secondary border-opacity-20">
+                        <h3 class="fs-5 fw-bold text-kin mb-3"><i class="bi bi-code-slash me-2"></i>② 快適なレスポンス実装</h3>
+                        <p class="small text-white-50 mb-0">世界観を保つために分割した画像を、最新のBootstrap 5.3を用いて美しくコーディング。スマートフォンでもパソコンでも、ストレスなく美しく表示されます。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white bg-opacity-10 rounded h-100 border border-secondary border-opacity-20">
+                        <h3 class="fs-5 fw-bold text-kin mb-3"><i class="bi bi-search me-2"></i>③ Web基準の「見えない配慮」</h3>
+                        <p class="small text-white-50 mb-0">画像主体のLPで懸念されがちな「表示速度」の最適化、検索エンジン（SEO）を意識した適切なalt属性の設定や周辺テキストの配置など、Web品質も担保します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="text-shyu fw-bold">SERVICE & PRICE</span>
+                <h2 class="fw-bold mt-2">プラン・ご案内</h2>
+                <p class="text-muted">「まずは1つの商品から」小さく、深く届けるミニLP制作</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card border-0 shadow-lg custom-card">
+                        <div class="p-4 bg-ai text-white text-center rounded-top">
+                            <h3 class="fs-4 fw-bold mb-0 text-kin">商品紹介・ミニLP制作プラン</h3>
+                        </div>
+                        <div class="card-body p-4 p-lg-5">
+                            <p class="text-muted small text-center mb-4">ホームページを丸ごと作るほどではないけれど、特定の「この一品」「このサービス」を魅力的に伝えたい方へ。</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3 d-flex align-items-start"><i class="bi bi-check-circle-fill text-shyu me-3 mt-1"></i> <div><strong>文章の推敲・構成案作成</strong></div></li>
+                                <li class="mb-3 d-flex align-items-start"><i class="bi bi-check-circle-fill text-shyu me-3 mt-1"></i> <div><strong>AI（ChatGPT Images 2.0）による世界観ビジュアル生成</strong></div></li>
+                                <li class="mb-3 d-flex align-items-start"><i class="bi bi-check-circle-fill text-shyu me-3 mt-1"></i> <div><strong>画像分割 ＆ Bootstrap 5.3による組み上げ（レスポンシブ）</strong></div></li>
+                                <li class="mb-3 d-flex align-items-start"><i class="bi bi-check-circle-fill text-shyu me-3 mt-1"></i> <div><strong>alt属性最適化などの表示品質・サポート</strong></div></li>
+                            </ul>
+                            <div class="text-center p-4 bg-light rounded">
+                                <span class="fs-6 text-muted d-block mb-1">料金目安</span>
+                                <span class="fs-2 fw-bold text-shyu">お見積り</span>
+                                <p class="small text-muted mb-0 mt-2">※構成の長さや画像枚数に応じて柔軟にご対応いたします。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-white border-top">
+        <div class="container py-5 text-center" style="max-width: 750px;">
+            <span class="text-shyu fw-bold">CONTACT</span>
+            <h2 class="fw-bold fs-2 mt-2 mb-4">あなたの商品の「世界観」をカタチにしませんか？</h2>
+            <p class="text-muted mb-5 leading-relaxed">
+                「こんな雰囲気で作れる？」「まずは相談だけしてみたい」という方も大歓迎です。<br>
+                お見積りやご質問は、下記のボタンよりお問い合わせフォーム（Googleフォーム）にてお気軽にお知らせください。
+            </p>
+
+            <div class="py-3">
+                <a href="https://docs.google.com/forms/d/e/XXXXX/viewform" target="_blank" class="btn btn-shyu btn-lg px-5 py-4 fw-bold shadow fs-4">
+                    <i class="bi bi-box-arrow-up-right me-2"></i>この内容で相談する（無料）
+                </a>
+            </div>
+            <p class="small text-muted mt-3">※Googleフォームのページへ移動します</p>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-ai text-center text-white-50 border-top border-secondary border-opacity-20">
+        <div class="container">
+            <p class="small mb-0">&copy; 2026 AIビジュアルLP制作サービス All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
