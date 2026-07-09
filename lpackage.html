@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>絵が、戦略になる。｜伴走型ブランド設計LPパッケージ</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --indigo:#102844;        /* 深い藍 */
+      --indigo-soft:#233f5f;
+      --vermilion:#b74432;     /* 朱色 */
+      --vermilion-dark:#983426;
+      --washi:#f7f0e4;         /* 和紙 */
+      --washi-light:#fffaf1;
+      --gold:#b99752;          /* 金 */
+      --gold-soft:#d9c08c;
+      --text:#162437;
+
+      --grad-indigo: linear-gradient(135deg, var(--indigo) 0%, var(--indigo-soft) 100%);
+      --grad-vermilion: linear-gradient(135deg, var(--vermilion) 0%, var(--vermilion-dark) 100%);
+      --grad-gold: linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 100%);
+      --grad-accent: linear-gradient(90deg, var(--gold) 0%, var(--vermilion) 100%);
+    }
+
+    body{
+      font-family:'Noto Sans JP', sans-serif;
+      color:var(--text);
+      background-color:var(--washi);
+    }
+
+    .font-display{
+      font-family:'Shippori Mincho', serif;
+    }
+
+    .bg-ink{ background:var(--grad-indigo) !important; }
+    .bg-paper{
+      background:linear-gradient(160deg, var(--washi) 0%, var(--washi-light) 100%) !important;
+    }
+    .bg-paper-deep{
+      background:linear-gradient(155deg, #efe3cd 0%, var(--washi) 55%, var(--washi-light) 100%) !important;
+    }
+    .bg-washi-white{
+      background:linear-gradient(160deg, #ffffff 0%, var(--washi-light) 100%) !important;
+    }
+    .text-brass{ color:var(--gold) !important; }
+    .bg-brass{ background:var(--grad-gold) !important; }
+    .border-brass{ border-color:var(--gold) !important; }
+
+    .btn-brass{
+      background:var(--grad-vermilion);
+      border:none;
+      color:#fff;
+      font-family:'Noto Sans JP', sans-serif;
+      letter-spacing:.05em;
+      box-shadow:0 6px 16px rgba(183,68,50,.28);
+      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .btn-brass:hover{
+      color:#fff;
+      filter:brightness(1.06);
+      transform:translateY(-2px);
+      box-shadow:0 10px 22px rgba(183,68,50,.35);
+    }
+    .btn-outline-brass{
+      border:1.5px solid var(--gold-soft);
+      color:var(--washi);
+      letter-spacing:.05em;
+      background:transparent;
+      transition:background .2s ease, color .2s ease;
+    }
+    .btn-outline-brass:hover{
+      background:var(--grad-gold);
+      color:var(--indigo);
+      border-color:transparent;
+    }
+
+    .eyebrow{
+      letter-spacing:.25em;
+      font-size:.8rem;
+      background:var(--grad-accent);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      font-weight:600;
+    }
+
+    .hero-section{
+      background:
+        linear-gradient(180deg, rgba(16,40,68,.90) 0%, rgba(35,63,95,.88) 55%, rgba(16,40,68,1) 100%),
+        url('https://via.placeholder.com/1600x1000') center/cover no-repeat;
+      min-height:100vh;
+    }
+
+    .kanji-mark{
+      font-family:'Shippori Mincho', serif;
+      font-size:2.4rem;
+      line-height:1;
+      color:#fff;
+      background:var(--grad-gold);
+      width:64px;
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      flex-shrink:0;
+      box-shadow:0 6px 14px rgba(185,151,82,.35);
+    }
+
+    .divider-brass{
+      width:56px;
+      height:3px;
+      background:var(--grad-accent);
+      border-radius:2px;
+    }
+
+    .card-feature{
+      background-color:#fff;
+      border:none;
+      border-top:3px solid transparent;
+      border-image:var(--grad-accent) 1;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .card-feature:hover{
+      transform:translateY(-6px);
+      box-shadow:0 1rem 2rem rgba(16,40,68,.14) !important;
+    }
+
+    .worry-item{
+      border-left:3px solid transparent;
+      border-image:linear-gradient(180deg, var(--gold), var(--vermilion)) 1;
+      padding-left:1.25rem;
+    }
+
+    .profile-photo{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+    }
+
+    .section-heading{
+      font-size:clamp(1.8rem, 4vw, 2.6rem);
+    }
+
+    .price-highlight{
+      border:1px solid transparent;
+      background:
+        linear-gradient(#fff, #fff) padding-box,
+        var(--grad-accent) border-box;
+    }
+
+    footer a{
+      color:#D9D3C4;
+      text-decoration:none;
+    }
+    footer a:hover{
+      color:var(--gold-soft);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .card-feature{ transition:none; }
+      .btn-brass{ transition:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero-section d-flex align-items-center text-white py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-between g-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <span class="eyebrow text-uppercase d-block mb-3">BRANDING LP PACKAGE</span>
+          <h1 class="font-display display-3 fw-bold mb-4 lh-base">
+            理屈を並べる前に、脳に届く。<br>
+            <span class="text-brass">『絵が、戦略になる。』</span>
+          </h1>
+          <p class="lead text-white-50 mb-5 lh-lg fs-5">
+            工房の空気感、素材の誠実な質感。AI×人の設計力で、言葉にできない「自社の強み」を一瞬で伝える、中小企業・ものづくり企業のための伴走型ブランド設計LPパッケージ。
+          </p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+            <a href="#contact" class="btn btn-brass btn-lg px-5 py-3 fw-medium">無料相談・お問い合わせ</a>
+            <a href="#solution" class="btn btn-outline-brass btn-lg px-4 py-3">コンセプトを見る</a>
+          </div>
+        </div>
+        <div class="col-lg-5 col-xl-4 d-none d-lg-block">
+          <div class="p-2 bg-washi-white rounded-3 shadow-lg transform-rotate">
+            <img src="https://via.placeholder.com/500x650" alt="世界観を伝えるブランドビジュアル" class="img-fluid rounded-2 shadow-sm">
+          </div>
+        </div>
+      </div></div></header>
+
+  <section class="bg-paper py-5 border-top border-bottom border-brass border-opacity-25">
+    <div class="container py-4">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <span class="text-brass fw-semibold small text-uppercase tracking-wider d-block mb-2">THE PROBLEM</span>
+          <h2 class="font-display section-heading fw-bold mb-3">独自の技術やこだわりが、<br class="d-sm-none">なぜか「安売り」されていませんか？</h2>
+          <div class="divider-brass mx-auto"></div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-9">
+          <div class="d-flex flex-column gap-4">
+            <div class="worry-item py-2">
+              <p class="fs-5 fw-medium mb-1">フリー素材の画像ばかりで、自社の本当の価値や世界観が伝わらない</p>
+              <p class="text-muted small mb-0">どこかで見たようなWebサイトになり、他社との差別化ができていない。</p>
+            </div>
+            <div class="worry-item py-2">
+              <p class="fs-5 fw-medium mb-1">ホームページを作ったものの、集客や売上に繋がらず「点」で終わっている</p>
+              <p class="text-muted small mb-0">美しい「箱」を作っただけで、その後の運用や導線が設計されていない。</p>
+            </div>
+            <div class="worry-item py-2">
+              <p class="fs-5 fw-medium mb-1">価格競争から脱却して、「あなただから」と選ばれるブランドになりたい</p>
+              <p class="text-muted small mb-0">製品のスペック争いではなく、自社の思想や情緒価値でファンを作りたい。</p>
+            </div>
+          </div>
+        </div>
+      </div></div></section>
+
+  <section id="solution" class="bg-washi-white py-5">
+    <div class="container py-5">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <span class="eyebrow d-block mb-2">CORE CONCEPT</span>
+          <h2 class="font-display section-heading fw-bold mb-3">視覚情報は、意思決定の8割を支配する</h2>
+          <div class="divider-brass mx-auto mb-4"></div>
+          <p class="lead text-muted px-lg-5 fs-6 lh-lg">
+            私たちが提供するのは、単に美しい画像を並べた「箱」ではありません。<br class="d-none d-md-inline">
+            顧客がページを開いた瞬間、言葉で説明する前に「ここなら間違いない」という直感的な確信を抱かせる、**成約を最大化するための視覚的導線**の設計です。
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center mt-3">
+        <div class="col-md-6 col-lg-5">
+          <div class="card h-100 card-feature shadow-sm p-4">
+            <div class="card-body">
+              <div class="kanji-mark mb-4">純</div>
+              <h3 class="font-display h4 fw-bold mb-3">世界観の純化</h3>
+              <p class="text-muted lh-lg mb-0">
+                最新AI（ChatGPT Images 2.0）を活用し、これまで曖昧だった「ブランドの気配」を極めて高い再現性で視覚化。全ページにわたって一貫した空気感を醸成します。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-5">
+          <div class="card h-100 card-feature shadow-sm p-4">
+            <div class="card-body">
+              <div class="kanji-mark mb-4">質</div>
+              <h3 class="font-display h4 fw-bold mb-3">手触り感のある信頼</h3>
+              <p class="text-muted lh-lg mb-0">
+                汎用的なフリー素材を徹底的に排除。工房に漂う「湿り気」や、素材が持つ「誠実な質感」までも再現したビジュアルにより、情報過多の市場で競合を圧倒します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div></div></section>
+
+  <section class="bg-paper-deep py-5">
+    <div class="container py-4">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <span class="text-brass fw-semibold small text-uppercase tracking-wider d-block mb-2">3-IN-1 MODEL</span>
+          <h2 class="font-display section-heading fw-bold mb-3">作って終わりの使い捨ては、もう卒業。<br>「集客・成約・運用」を統合する三位一体モデル</h2>
+          <div class="divider-brass mx-auto"></div>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center text-center">
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100 border border-black-50 border-opacity-10">
+            <div class="text-brass font-display display-6 fw-bold mb-2">01</div>
+            <h3 class="h5 fw-bold mb-3">SNS集客：流入経路の設計</h3>
+            <p class="text-muted small lh-lg mb-0">AIを駆使し、ブランドの世界観を継承したコンテンツを量産。SNSの段階からLPと同じ「温度感」を維持し、期待値の高い見込み客を確実に誘導します。</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100 border border-black-50 border-opacity-10">
+            <div class="text-brass font-display display-6 fw-bold mb-2">02</div>
+            <h3 class="h5 fw-bold mb-3">LP制作：堅牢な構造</h3>
+            <p class="text-muted small lh-lg mb-0">世界標準の基盤「Bootstrap」を用いた信頼性の高いサイト設計。視覚的な「情緒価値」と、使いやすさという「機能価値」を高い次元で両立させます。</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-8">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100 border border-black-50 border-opacity-10">
+            <div class="text-brass font-display display-6 fw-bold mb-2">03</div>
+            <h3 class="h5 fw-bold mb-3">継続運用：資産の研磨</h3>
+            <p class="text-muted small lh-lg mb-0">公開後のユーザー反応を分析し、微修正を反復。単なる保守ではなく、市場の変化に合わせてブランドの鮮度を保ち、長期的な資産価値を積み上げます。</p>
+          </div>
+        </div>
+      </div><div class="row justify-content-center mt-5">
+        <div class="col-lg-9 text-center bg-ink text-white p-4 rounded-3 shadow">
+          <p class="mb-0 fw-medium">
+            <i class="bi bi-shield-check text-brass me-2"></i>パッケージ化の戦略的メリット：窓口の一本化による「管理コストの大幅低減」と「全工程における一貫性の担保」を同時に実現。
+          </p>
+        </div>
+      </div>
+    </div></section>
+
+  <section class="bg-ink text-white py-5 position-relative overflow-hidden">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="eyebrow d-block mb-2">STRATEGY</span>
+          <h2 class="font-display display-5 fw-bold mb-4 text-white">商品名ではなく、<br><span class="text-brass">「あなた」で選ばれる。</span><br>『冠ブランド戦略』</h2>
+          <div class="divider-brass mb-4"></div>
+          <p class="lh-lg text-white-50 mb-4">
+            中小企業が価格競争という消耗戦から脱却するためには、商品そのもののスペックではなく、顧客自身が「選ばれる理由」となる必要があります。
+          </p>
+          <p class="lh-lg text-white-50 mb-0">
+            すべての成果物の冒頭に「企業名・個人名」という独自の起点を冠することで、一つひとつの実績が独立した点ではなく、巨大な富を形成する<strong class="text-white">「積層構造（レイヤード・ストラクチャー）」</strong>へと昇華。広告費に依存しない、能動的な「指名検索」を獲得する商売の王道を実現します。
+          </p>
+        </div>
+        <!-- 右側：さぼ田さぼ郎の実績・書籍ビジュアルを配置するエリア -->
+        <div class="col-lg-6">
+          <div class="row g-4 align-items-center">
+            <!-- 書籍1枚目 -->
+            <div class="col-6">
+              <div class="p-2 bg-white bg-opacity-10 rounded-3 shadow border border-white border-opacity-10 text-center text-white-50">
+                <!-- 実際の書籍表紙（大鏡や荘子など）の画像パスを src に入れます -->
+                <img src="https://via.placeholder.com/300x420" alt="さぼ田さぼ郎の大鏡" class="img-fluid rounded-2 shadow-sm mb-2">
+                <span class="small d-block text-white fw-medium pt-1">『さぼ田さぼ郎の大鏡』</span>
+              </div>
+            </div>
+            <!-- 書籍2枚目 -->
+            <div class="col-6">
+              <div class="p-2 bg-white bg-opacity-10 rounded-3 shadow border border-white border-opacity-10 text-center text-white-50 mt-4"> 
+                <!-- mt-4 を少し入れることで、2枚の画像を互い違い（ジグザグ）に配置し、モダンな「積層感」を演出します -->
+                <img src="https://via.placeholder.com/300x420" alt="さぼ田さぼ郎の今昔物語集" class="img-fluid rounded-2 shadow-sm mb-2">
+                <span class="small d-block text-white fw-medium pt-1">『さぼ田さぼ郎の今昔物語集』</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div></div></section>
+
+  <section class="bg-washi-white py-5">
+    <div class="container py-5">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <span class="eyebrow d-block mb-2">TECHNOLOGY & HUMANITY</span>
+          <h2 class="font-display section-heading fw-bold mb-3">AIのスピード × 人の設計力</h2>
+          <div class="divider-brass mx-auto"></div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+          <div class="table-responsive rounded-3 shadow-sm bg-white border">
+            <table class="table table-striped align-middle mb-0 text-nowrap text-center">
+              <thead class="table-dark bg-ink">
+                <tr>
+                  <th scope="col" class="py-3 font-display">項目 / 役割・強み</th>
+                  <th scope="col" class="py-3 font-display text-brass">AI (ChatGPT Images 2.0)</th>
+                  <th scope="col" class="py-3 font-display">人間 (ワードクラフト)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="py-3 fw-bold">役割</th>
+                  <td class="text-brass py-3">ビジュアル生成・量的展開</td>
+                  <td class="py-3">戦略的ディレクション・ナラティブ制御</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="py-3 fw-bold">強み</th>
+                  <td class="text-brass py-3">圧倒的な具現化スピード</td>
+                  <td class="py-3">文脈の理解・導線設計・品質管理</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="py-3 fw-bold">提供価値</th>
+                  <td class="text-brass py-3">視覚的インパクト・コスト最適化</td>
+                  <td class="py-3 fw-medium">成約率の担保・ブランドの血通い</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5 g-4 align-items-center">
+        <div class="col-md-7 text-center text-md-start">
+          <h3 class="font-display h4 fw-bold mb-3">属人化を排除する技術基盤「Bootstrap」の採用</h3>
+          <p class="text-muted small lh-lg mb-0">
+            LPの基盤には世界標準のフレームワークを採用。構造が洗練されており、デバイスを選ばず高速に表示される「長く運用できる品質」を保証します。特定の開発者に依存するリスクを排除する（No Vendor Lock-in）ことは、お客様の自由を守るというプロフェッショナルとしての誠実さの証です。
+          </p>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="display-1 text-brass opacity-50"><i class="bi bi-code-slash"></i></div>
+        </div>
+      </div>
+    </div></section>
+
+  <section class="bg-paper py-5 border-top border-bottom border-brass border-opacity-25">
+    <div class="container py-5">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <span class="eyebrow d-block mb-2">INVESTMENT & PRICE</span>
+          <h2 class="font-display section-heading fw-bold mb-3">自社専用の「ブランド推進室」を、現実的なコストで。</h2>
+          <div class="divider-brass mx-auto"></div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center g-4">
+        <div class="col-md-10 col-lg-8">
+          <div class="card price-highlight rounded-4 shadow p-4 p-md-5">
+            <div class="card-body">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6 border-end-md border-color-light text-center py-2">
+                  <span class="badge bg-ink px-3 py-2 rounded-pill small mb-2">初期費用</span>
+                  <div class="font-display display-5 fw-bold text-brass mb-2">100,000<span class="fs-4 text-dark"> 円</span></div>
+                  <p class="small text-muted mb-0">ブランド設計 / LP構築 / SNS導線設計</p>
+                </div>
+                <div class="col-md-6 text-center py-2">
+                  <span class="badge bg-secondary px-3 py-2 rounded-pill small mb-2">継続更新費用</span>
+                  <div class="font-display display-5 fw-bold text-brass mb-2">30,000<span class="fs-4 text-dark"> 円<span class="small text-muted font-sans"> / 月</span></span></div>
+                  <p class="small text-muted mb-0">データ分析 / コンテンツ更新 / 運用支援</p>
+                </div>
+              </div>
+              <hr class="my-4 border-brass opacity-50">
+              <p class="small text-muted lh-lg mb-0 text-center text-md-start">
+                <i class="bi bi-info-circle-fill text-brass me-1"></i> <strong>投資としての評価：</strong> 月額30,000円の運用費は、パートタイムの従業員一人を雇うよりも遥かに安価です。いわば**「水道光熱費と同等のコストで、自社専用のブランド推進室を維持する」**ことに他なりません。初期費用で「売れる仕組み」という資産を築き、月額費用でその資産を磨き続けます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div></div></section>
+
+  <section id="contact" class="bg-washi-white py-5">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center mb-5">
+          <span class="eyebrow d-block mb-2">MESSAGE</span>
+          <h2 class="font-display section-heading fw-bold mb-3">共にブランドを育てる「伴走者」として</h2>
+          <div class="divider-brass mx-auto"></div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="p-4 bg-paper rounded-3 border mb-5 lh-lg shadow-sm">
+            <p>
+              有限会社ワードクラフトは、現在、本サービスのさらなる品質向上のために実績を積み重ねている段階にあります。私たちはこの「実績構築中」という事実を隠しません。
+            </p>
+            <p class="mb-0">
+              なぜなら、それは私たちが既存の型を押し付ける制作会社ではなく、<strong>「一社一社のビジネスに誰よりも深くコミットし、共に正解を泥臭く探していく伴走者」</strong>であることの証明だからです。私たちの仕事は、単にLPを作ることではありません。あなたというブランドを、市場の荒波に耐えうる大樹へと育てることです。
+            </p>
+          </div>
+
+          <div class="text-center">
+            <h3 class="font-display h3 fw-bold mb-4">「絵が、戦略になる。」<br>その最初の一歩を、ご一緒に。</h3>
+            <p class="text-muted mb-5">自社商品の持つ世界観の言語化・視覚化について、まずは無料でお話を聞かせてください。</p>
+            <div class="d-grid gap-2 col-md-8 mx-auto">
+              <a href="mailto:info@example.com" class="btn btn-brass btn-lg py-3 fs-5 fw-bold shadow-lg">
+                <i class="bi bi-envelope-fill me-2"></i> 無料相談を申し込む（メール）
+              </a>
+            </div>
+          </div>
+        </div>
+      </div></div></section>
+
+  <footer class="bg-ink text-white-50 py-4 border-top border-brass border-opacity-25">
+    <div class="container text-center text-md-between d-md-flex align-items-center justify-content-between">
+      <div class="mb-3 mb-md-0">
+        <span class="font-display text-white fw-bold h5">有限会社ワードクラフト</span>
+        <p class="small mb-0 mt-1">&copy; 2026 Wordcraft Co., Ltd. All Rights Reserved.</p>
+      </div>
+      <div class="small">
+        <a href="#" class="me-3">プライバシーポリシー</a>
+        <a href="#solution">サービス概要</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
